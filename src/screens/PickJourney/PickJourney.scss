@@ -1,0 +1,20 @@
+.PickJourney {
+  .Journey-Types-List {
+    li {
+      margin: 1em 0;
+
+      label {
+        margin-left: .5em;
+      }
+
+      input {
+        width: 1em;
+        height: 1em;
+
+        &:disabled ~ label {
+          color: darkgrey;
+        }
+      }
+    }
+  }
+}

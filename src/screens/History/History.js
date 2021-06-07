@@ -2,37 +2,28 @@ import React from "react";
 import Screen from "../../components/Screen/Screen";
 import {  NavLink } from "react-router-dom";
 
-
-
 function History({history}) {
-
-console.log(history)
-
-
   return (
     <Screen  className="History">
-       <header>
+        <NavLink to="/stats" className="Back-Button">Back</NavLink>
         <h1>
-              History
-          </h1>
-          <ul>
-            <li><NavLink to="/stats">Back</NavLink></li>
-          </ul>
-       </header>
+          History
+        </h1>
 
-
-
-       {
-         history.map(entry => {
-           return(
-             <>
-              <p>Type: {entry.type}</p>
-              <p>Map: {entry.map}</p>
-              <p>Extraction event: {entry.extractionEvent}</p>
-             </>
-           )
-         })
-       }
+        <ul>
+          {
+            history.map((entry, i) => {
+              return(
+                <li key={i}>
+                  <p>Type: {entry.type}</p>
+                  <p>Map: {entry.map}</p>
+                  <p>Extraction event: {entry.extractionEvent}</p>
+                </li>
+              )
+            })
+          }
+        </ul>
+       
     </Screen>
   );
 }

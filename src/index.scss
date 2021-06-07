@@ -1,6 +1,4 @@
-
 body {
-  background-color: red;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -14,7 +12,10 @@ code {
     monospace;
 }
 
-
-ul {
-  background: red;
+html, 
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  // min-height: 100%;
 }

@@ -1,0 +1,19 @@
+.Journey-Set-Up {
+  .Hero {
+    margin: 1em 0;
+    font-size: 1em;
+
+    label {
+      margin-left: .5em;
+    }
+
+    input {
+      width: 1em;
+      height: 1em;
+
+      &:disabled ~ label {
+        color: darkgrey;
+      }
+    }
+  }
+}
