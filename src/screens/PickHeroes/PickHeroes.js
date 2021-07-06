@@ -4,24 +4,26 @@ import { NavLink } from "react-router-dom";
 
 import "./PickHeroes.scss";
 
-function HeroCheckbox({name, id, selectHeroes, selectedHeroes}) {
-  const selectHero = (id) => {
-    if(!selectedHeroes.includes(id)) {
-      selectHeroes(selectedHeroes => [...selectedHeroes, id]);
+function HeroCheckbox({hero, name, id, selectHeroes, selectedHeroes}) {
+  const selectHero = (hero) => {
+    if(!selectedHeroes.includes(hero)) {
+      selectHeroes(selectedHeroes => [...selectedHeroes, hero]);
     } else {
-      selectHeroes(selectedHeroes => selectedHeroes.filter(arrayId => arrayId !== id))
+      selectHeroes(selectedHeroes => selectedHeroes.filter(arrayId => arrayId !== hero))
     }
   };
 
   // console.log(selectedHeroes)
-
+  
   return(
     <>
       <input 
         type="checkbox" 
         id={id}
         name='heroes'
-        onClick={() => selectHero(id)}
+        checked={selectedHeroes.includes(hero) ? "checked" : null}
+        disabled={selectedHeroes.length === 4 && !selectedHeroes.includes(hero) ? "disabled" : null}
+        onChange={() => selectHero(hero)}
       />
       <label 
         htmlFor={id}
@@ -37,6 +39,7 @@ function Hero({hero, selectHeroes, selectedHeroes}) {
   return(
     <li className='Hero'>
       <HeroCheckbox 
+        hero={hero}
         name={hero.name}
         id={hero.id}
         selectHeroes={selectHeroes}
@@ -49,16 +52,16 @@ function Hero({hero, selectHeroes, selectedHeroes}) {
 }
 
 function PickHeroes({heroes, selectHeroes, selectedHeroes}) {
-  console.log(selectedHeroes)
+  // console.log(selectedHeroes)
 
   return (
-    <Screen className="Journey-Set-Up" >
+    <Screen className="PickHeroes" >
       <NavLink to="/pick-journey" className="Back-Button">Back</NavLink>
       <h1>
         Pick Heroes
       </h1>
 
-      <p>heroes {selectedHeroes.length}</p>
+      {/* <p>heroes {selectedHeroes.length}</p> */}
 
       <ul>
         {

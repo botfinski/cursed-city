@@ -29,7 +29,7 @@ function JourneyType({journeyType, selectJourneyType, selectedjourneyType}) {
     <li>
       <input 
         type="radio" 
-        value={journeyType.name.toLowerCase()} 
+        // value={journeyType.name.toLowerCase()} 
         id={journeyType.name.toLowerCase()} 
         name="journey-type"
         disabled={journeyType.disabled ? "disabled" : null}
@@ -46,7 +46,7 @@ function JourneyType({journeyType, selectJourneyType, selectedjourneyType}) {
 }
 
 function PickJourney({selectedjourneyType, selectJourneyType}) {
-  console.log(selectedjourneyType)
+  // console.log(selectedjourneyType)
   return (
     <Screen className="PickJourney" >
       <NavLink 

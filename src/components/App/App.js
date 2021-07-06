@@ -18,6 +18,7 @@ function App() {
 
   const [selectedjourneyType, selectJourneyType] = useState('');
   const [selectedHeroes, selectHeroes] = useState([]);
+  const [heroesTokens, setHeroesTokens] = useState([]);
 
   return (
     <BrowserRouter>
@@ -55,7 +56,12 @@ function App() {
         </Route>
 
         <Route path="/pick-initiative-tokens">
-          <PickInitiativeTokens />
+          <PickInitiativeTokens 
+            selectedHeroes={selectedHeroes}
+            heroes={heroes}
+            heroesTokens={heroesTokens}
+            setHeroesTokens={setHeroesTokens}
+          />
         </Route>
         
       </div>
