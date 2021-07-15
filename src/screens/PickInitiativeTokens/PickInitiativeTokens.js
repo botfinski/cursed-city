@@ -6,121 +6,28 @@ import './PickInitiativeTokens.scss';
 
 const tokens = [
   {
-    name: "Player-1",
-    disabled: false
+    name: "Player-1"
   },
   {
-    name: "Player-2",
-    disabled: false
+    name: "Player-2"
   },
   {
-    name: "Player-3",
-    disabled: false
+    name: "Player-3"
   },
   {
-    name: "Player-4",
-    disabled: false
+    name: "Player-4"
   }
 ];
 
-// function TokenSelector({hero, setHeroesTokens, heroesTokens}) {
-//   // console.log(heroesTokens)
-
-//   const pickToken = (tokenName, heroId) => {
-//     // console.log(tokenName)
-//     // console.log(heroId)
-
-//     if(heroesTokens.length === 0) {
-//       setHeroesTokens(heroesTokens => [...heroesTokens, {tokenName, heroId}]);
-//     } else {
-//       if(heroesTokens.some(item => item.heroId === heroId)) {
-//         // console.log('jest ten hero')
-//         // console.log(heroesTokens.some(item => item.heroId === heroId))
-//         let item = heroesTokens.find(item => item.heroId === heroId)
-//         // console.log(tokenName)
-//         item.tokenName = tokenName;
-//         // console.log(heroesTokens)
-//         setHeroesTokens(heroesTokens => [...heroesTokens]);
-//       } else if(heroesTokens.some(item => item.tokenName === tokenName)) {
-//         console.log('jest ten token');
-
-//         let item = heroesTokens.find(item => item.tokenName === tokenName)
-//         item.heroId = heroId;
-
-
-//         console.log(inputEl.current)
-//       }
-//     }
-
-
-
-
-
-
-
-
-
-//     // if(heroesTokens.some((element) => element.tokenName === tokenName)) {
-//     //   console.log(element)
-//     // }
-
-
-
-//     // console.log(heroesTokens.some(item => item.name === tokenName))
-//     // console.log(heroesTokens.some(item => item.id === heroId) && heroesTokens.some(item => item.name === tokenName))
-   
-    
-//     // console.log(heroesTokens.some(item => item.token === token.name))
-
-
-//     // if(!heroesTokens.some(item => item.heroId === hero.id)) {
-//     //   if(!heroesTokens.some(item => item.token === token.name)) {
-//     //     setHeroesTokens(heroesTokens => [...heroesTokens, tokenObj]);
-//     //   } else {
-//     //     // console.log('hest juz token')
-//     //     setHeroesTokens(heroesTokens => heroesTokens.filter(arrayId => arrayId === token.name));
-//     //     setHeroesTokens(heroesTokens => [...heroesTokens, tokenObj]);
-//     //   }
-      
-//     // } else {
-//     //   setHeroesTokens(heroesTokens => heroesTokens.filter(arrayId => arrayId === hero.id))
-//     //   setHeroesTokens(heroesTokens => [...heroesTokens, tokenObj]);
-//     // }
-
-//     console.log(heroesTokens)
-
-//   }
-
-//   const inputEl = useRef(null);
-
-//   return(
-//     <ul className='Token-Selector'>
-//       {
-//         tokens.map((token,i) => (
-//           <li>
-//             <input 
-//               type="radio"
-//               name={`${hero.id}-token`}
-//               id={`${hero.id}-player-${i}`} 
-//               onChange={() => pickToken(token.name, hero.id)}
-//               ref={inputEl}
-//             />
-//             <label 
-//               htmlFor={`${hero.id}-player-${i}`} 
-//             > 
-//               {token.name}
-//             </label>
-//           </li>
-//         ))
-//       }
-//     </ul>
-//   )
-// }
 
 function PickInitiativeTokens({selectedHeroes, heroes, heroesTokens, setHeroesTokens}) {
-  // console.log(selectedHeroes);
+  console.log(selectedHeroes);
   // console.log(tokens);
-  // console.log(heroesTokens);
+  // console.log(heroesTokens);s
+
+  const moveToken = (direction, i) => {
+    console.log(`${i}: ${direction}`)
+  }
 
   return (
     <Screen className="PickInitiativeTokens" >
@@ -132,15 +39,14 @@ function PickInitiativeTokens({selectedHeroes, heroes, heroesTokens, setHeroesTo
 
         <ul>
           {
-            selectedHeroes.map((hero,i) => (
-              <li key={i} className="Hero" >
-                <h2>{hero.name}</h2>
+            tokens.map((token, i) => (
+              <li>
+                {token.name}: {selectedHeroes[i].name}
 
-                {/* <TokenSelector 
-                  hero={hero}
-                  setHeroesTokens={setHeroesTokens}
-                  heroesTokens={heroesTokens}
-                /> */}
+                <div>
+                  <button onClick={() => moveToken('up', i)}>up</button>
+                  <button onClick={() => moveToken('down', i)}>down</button>
+                </div>
               </li>
             ))
           }
