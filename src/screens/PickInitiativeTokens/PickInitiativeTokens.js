@@ -50,6 +50,9 @@ function PickInitiativeTokens({selectedHeroes, heroesTokens, setHeroesTokens}) {
 
       <h1>Pick Initiative Tokens</h1>
 
+      {/* Error: heroesTokens = [] ! przy pierwszym renderze
+      useEffect nie wrzuca wartości przy pierwszym renderze */}
+
       {/* <ul className="TokensList">
         {
           tokens.map((token, i) => (
