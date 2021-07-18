@@ -1,91 +1,35 @@
 [
     {
         "name": "Jelsen Darrock",
-        "id": "jelsen",
-        "level": 0,
-        "experience": "0/2",
-        "traits": "",
-        "attacks": "",
-        "itemCarried": "",
-        "weapon": "",
-        "armor": ""
+        "id": "jelsen"
     },
     {
         "name": "Glaurio ven Alten III",
-        "id": "glaurio",
-        "level": 0,
-        "experience": "1/2",
-        "traits": "",
-        "attacks": "",
-        "itemCarried": "",
-        "weapon": "",
-        "armor": ""
+        "id": "glaurio"
     },
     {
         "name": "Cleona Zeitengale",
-        "id": "cleona",
-        "level": 0,
-        "experience": "0/2",
-        "traits": "",
-        "attacks": "",
-        "itemCarried": "",
-        "weapon": "",
-        "armor": ""
+        "id": "cleona"
     },
     {
         "name": "Brutogg Corpse-Eater",
-        "id": "brutogg",
-        "level": 0,
-        "experience": "0/2",
-        "traits": "",
-        "attacks": "",
-        "itemCarried": "",
-        "weapon": "",
-        "armor": ""
+        "id": "brutogg"
     },
     {
         "name": "Qulathis the Exile",
-        "id": "qulathis",
-        "level": 0,
-        "experience": "1/2",
-        "traits": "",
-        "attacks": "",
-        "itemCarried": "",
-        "weapon": "",
-        "armor": ""
+        "id": "qulathis"
     },
     {
         "name": "Emelda Braskov",
-        "id": "emelda",
-        "level": 0,
-        "experience": "1/2",
-        "traits": "",
-        "attacks": "",
-        "itemCarried": "",
-        "weapon": "",
-        "armor": ""
+        "id": "emelda"
     },
     {
         "name": "Dagnai Holdenstock",
-        "id": "dagnai",
-        "level": 0,
-        "experience": "1/2",
-        "traits": "",
-        "attacks": "",
-        "itemCarried": "Red Blade",
-        "weapon": "",
-        "armor": ""
+        "id": "dagnai"
     },
     {
         "name": "Octren Glimscry",
-        "id": "octren",
-        "level": 0,
-        "experience": "0/2",
-        "traits": "",
-        "attacks": "",
-        "itemCarried": "",
-        "weapon": "",
-        "armor": ""
+        "id": "octren"
     }
 ]
 

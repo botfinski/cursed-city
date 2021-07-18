@@ -37,7 +37,7 @@ function HeroCheckbox({hero, name, id, selectHeroes, selectedHeroes}) {
 function Hero({hero, selectHeroes, selectedHeroes}) {
 
   return(
-    <li className='Hero'>
+    <li className="Hero">
       <HeroCheckbox 
         hero={hero}
         name={hero.name}

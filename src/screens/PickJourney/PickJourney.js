@@ -1,6 +1,6 @@
 import React from "react";
 import Screen from "../../components/Screen/Screen"
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "./PickJourney.scss";
 
@@ -61,7 +61,7 @@ function PickJourney({selectedjourneyType, selectJourneyType}) {
         Pick Journey
       </h1>
       
-      <ul className='Journey-Types-List'>
+      <ul className="Journey-Types-List">
         {
           journeyTypes.map((journeyType,i) => (
             <JourneyType 

@@ -1,6 +1,6 @@
 import React from "react";
 import Screen from "../../components/Screen/Screen";
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function History({history}) {
   return (

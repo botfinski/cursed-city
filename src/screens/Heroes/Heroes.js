@@ -1,11 +1,11 @@
 import React from "react";
 import Screen from "../../components/Screen/Screen";
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Hero.scss"
 
 function Hero({hero}) {
   return(
-    <div className='Hero'>
+    <div className="Hero">
       <h2>{hero.name}</h2>
       <p>level: {hero.level}</p>
       <p>experience: {hero.experience}</p>

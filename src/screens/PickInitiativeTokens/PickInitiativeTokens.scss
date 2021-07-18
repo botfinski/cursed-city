@@ -1,28 +1,12 @@
 .PickInitiativeTokens {
-  .ListContainer {
-    // display: flex;
-    
-    // ul:nth-child(2) {
-    //   display: flex;
-    //   background: black;
-    // }
-
-    .Token-Selector {
+  .TokensList {
+    li {
       display: flex;
+      justify-content: space-between;
 
-      li {
-        display: flex;
-        flex: 1 0 auto;
-        flex-direction: column;
-        align-items: center;
+      button:disabled {
+        background: #747474;
       }
-    }
-
-    
-
-    .Hero {
-      margin: 1em 0;
-      font-size: 1em;
     }
   }
 }
