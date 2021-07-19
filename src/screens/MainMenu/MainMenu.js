@@ -4,7 +4,7 @@ import Screen from "../../components/Screen/Screen"
 
 function MainMenu({children}) {
   return (
-    <Screen className="MainMenu" >
+    <Screen className="MainMenu">
       <h1>
         Main Menu
       </h1>

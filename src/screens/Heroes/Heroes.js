@@ -15,7 +15,7 @@ function Hero({hero}) {
 
 function Heroes({heroes}) {
   return (
-    <Screen className="Heroes" >
+    <Screen className="Heroes">
       <NavLink to="/stats" className="Back-Button">Back</NavLink>
 
       <h1>

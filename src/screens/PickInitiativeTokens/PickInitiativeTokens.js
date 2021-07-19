@@ -20,12 +20,16 @@ const tokens = [
 ];
 
 function PickInitiativeTokens({selectedHeroes, heroesTokens, setHeroesTokens}) {
-  console.log(heroesTokens)
+  // useEffect(() => {
+  //   // zmienic tu warunek
+  //   // na length 0 przy zmianie herosow nie updatuje teraz state heroesTokens
 
+  // albo i nie zmieniac - click next na screenie pickHeroes updatuje state
 
-  useEffect(() => {
-    setHeroesTokens(heroesTokens => [...selectedHeroes]);
-  }, [selectedHeroes]);
+  //   if(heroesTokens.length === 0) {
+  //     setHeroesTokens(heroesTokens => [...selectedHeroes]);
+  //   }
+  // }, []);
 
   const moveToken = (direction, i) => {
     let moveToIndex;
@@ -45,41 +49,47 @@ function PickInitiativeTokens({selectedHeroes, heroesTokens, setHeroesTokens}) {
 
 
   return (
-    <Screen className="PickInitiativeTokens" >
-      <NavLink to="/pick-heroes" className="Back-Button">Back</NavLink>
+    <Screen className="PickInitiativeTokens">
+      <NavLink 
+        to="/pick-heroes" 
+        className="Back-Button"
+      >
+        Back
+      </NavLink>
 
       <h1>Pick Initiative Tokens</h1>
 
-      {/* Error: heroesTokens = [] ! przy pierwszym renderze
-      useEffect nie wrzuca wartości przy pierwszym renderze */}
+      {
+        heroesTokens.length === 0 ? <p>loading data...</p> : (
+          <ul className="TokensList">
+            {
+              tokens.map((token, i) => (
+                <li key={token.name}>
+                  {i}: {heroesTokens[i].name}
 
-      {/* <ul className="TokensList">
-        {
-          tokens.map((token, i) => (
-            <li key={token.name}>
-              {i}: {heroesTokens[i].name}
+                  <div className="ButtonContainer">
 
-              <div className="ButtonContainer">
+                    <button 
+                      onClick={() => moveToken("up", i)}
+                      disabled={i !== 0 ? "" : "disabled"}
+                    >
+                      ▲
+                    </button>
 
-                <button 
-                  onClick={() => moveToken("up", i)}
-                  disabled={i !== 0 ? "" : "disabled"}
-                >
-                  ▲
-                </button>
+                    <button
+                      onClick={() => moveToken("down", i)}
+                      disabled={i !== heroesTokens.length - 1 ? "" : "disabled"}
+                    >
+                      ▼
+                    </button>
 
-                <button
-                  onClick={() => moveToken("down", i)}
-                  disabled={i !== heroesTokens.length - 1 ? "" : "disabled"}
-                >
-                  ▼
-                </button>
-
-              </div>
-            </li>
-          ))
-        }
-      </ul> */}
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        )
+      }
 
       <NavLink to="/prepare-combat">Prepare Combat</NavLink>
     </Screen>

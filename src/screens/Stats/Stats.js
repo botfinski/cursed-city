@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 function Stats({children, stats}) {
   return (
-    <Screen className="Stats" >
+    <Screen className="Stats">
       <NavLink to="/" className="Back-Button">Main Menu</NavLink>
       <h1>
         Stats

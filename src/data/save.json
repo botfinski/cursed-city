@@ -1,82 +1,89 @@
 {
-  "jelsen": {
-    "name": "Jelsen Darrock",
-    "level": 0,
-    "experience": "0/2",
-    "traits": "",
-    "attacks": "",
-    "itemCarried": "",
-    "weapon": "",
-    "armor": ""
+  "heroes": {
+    "jelsen": {
+      "name": "Jelsen Darrock",
+      "level": 0,
+      "experience": "0/2",
+      "traits": "",
+      "attacks": "",
+      "itemCarried": "",
+      "weapon": "",
+      "armor": ""
+    },
+    "glaurio": {
+      "name": "Glaurio ven Alten III",
+      "level": 0,
+      "experience": "1/2",
+      "traits": "",
+      "attacks": "",
+      "itemCarried": "",
+      "weapon": "",
+      "armor": ""
+    },
+    "cleona": {
+      "name": "Cleona Zeitengale",
+      "level": 0,
+      "experience": "0/2",
+      "traits": "",
+      "attacks": "",
+      "itemCarried": "",
+      "weapon": "",
+      "armor": ""
+    },
+    "brutogg": { 
+      "name": "Brutogg Corpse-Eater",
+      "level": 0,
+      "experience": "0/2",
+      "traits": "",
+      "attacks": "",
+      "itemCarried": "",
+      "weapon": "",
+      "armor": ""
+    },
+    "qulathis": {
+      "name": "Qulathis the Exile",
+      "level": 0,
+      "experience": "1/2",
+      "traits": "",
+      "attacks": "",
+      "itemCarried": "",
+      "weapon": "",
+      "armor": ""
+    },
+    "emelda": {
+      "name": "Emelda Braskov",
+      "level": 0,
+      "experience": "1/2",
+      "traits": "",
+      "attacks": "",
+      "itemCarried": "",
+      "weapon": "",
+      "armor": ""
+    },
+    "dagnai": {
+      "name": "Dagnai Holdenstock",
+      "level": 0,
+      "experience": "1/2",
+      "traits": "",
+      "attacks": "",
+      "itemCarried": "Red Blade",
+      "weapon": "",
+      "armor": ""
+    },
+    "octren": {
+      "name": "Octren Glimscry",
+      "level": 0,
+      "experience": "0/2",
+      "traits": "",
+      "attacks": "",
+      "itemCarried": "",
+      "weapon": "",
+      "armor": ""
+    }
   },
-  "glaurio": {
-    "name": "Glaurio ven Alten III",
-    "level": 0,
-    "experience": "1/2",
-    "traits": "",
-    "attacks": "",
-    "itemCarried": "",
-    "weapon": "",
-    "armor": ""
-  },
-  "cleona": {
-    "name": "Cleona Zeitengale",
-    "level": 0,
-    "experience": "0/2",
-    "traits": "",
-    "attacks": "",
-    "itemCarried": "",
-    "weapon": "",
-    "armor": ""
-  },
-  "brutogg": { 
-    "name": "Brutogg Corpse-Eater",
-    "level": 0,
-    "experience": "0/2",
-    "traits": "",
-    "attacks": "",
-    "itemCarried": "",
-    "weapon": "",
-    "armor": ""
-  },
-  "qulathis": {
-    "name": "Qulathis the Exile",
-    "level": 0,
-    "experience": "1/2",
-    "traits": "",
-    "attacks": "",
-    "itemCarried": "",
-    "weapon": "",
-    "armor": ""
-  },
-  "emelda": {
-    "name": "Emelda Braskov",
-    "level": 0,
-    "experience": "1/2",
-    "traits": "",
-    "attacks": "",
-    "itemCarried": "",
-    "weapon": "",
-    "armor": ""
-  },
-  "dagnai": {
-    "name": "Dagnai Holdenstock",
-    "level": 0,
-    "experience": "1/2",
-    "traits": "",
-    "attacks": "",
-    "itemCarried": "Red Blade",
-    "weapon": "",
-    "armor": ""
-  },
-  "octren": {
-    "name": "Octren Glimscry",
-    "level": 0,
-    "experience": "0/2",
-    "traits": "",
-    "attacks": "",
-    "itemCarried": "",
-    "weapon": "",
-    "armor": ""
+  "quest": {
+    "fear": 6,
+    "influence": 4,
+    "gravestones": ""
   }
 }

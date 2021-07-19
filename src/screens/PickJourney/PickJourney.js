@@ -29,11 +29,11 @@ function JourneyType({journeyType, selectJourneyType, selectedjourneyType}) {
     <li>
       <input 
         type="radio" 
-        // value={journeyType.name.toLowerCase()} 
+        value={journeyType.name.toLowerCase()} 
         id={journeyType.name.toLowerCase()} 
         name="journey-type"
         disabled={journeyType.disabled ? "disabled" : null}
-        checked={selectedjourneyType === journeyType.name.toLowerCase() ? "checked" : null}
+        checked={selectedjourneyType === journeyType.name.toLowerCase() ? "checked" : ""}
         onChange={() => selectJourneyType(journeyType.name.toLowerCase())}
       />
       <label 
@@ -48,11 +48,11 @@ function JourneyType({journeyType, selectJourneyType, selectedjourneyType}) {
 function PickJourney({selectedjourneyType, selectJourneyType}) {
   // console.log(selectedjourneyType)
   return (
-    <Screen className="PickJourney" >
+    <Screen className="PickJourney">
       <NavLink 
         to="/" 
         className="Back-Button"
-        onClick={() => selectJourneyType('')}
+        onClick={() => selectJourneyType("")}
       >
         Main Menu
       </NavLink>
@@ -60,22 +60,24 @@ function PickJourney({selectedjourneyType, selectJourneyType}) {
       <h1>
         Pick Journey
       </h1>
-      
-      <ul className="Journey-Types-List">
-        {
-          journeyTypes.map((journeyType,i) => (
-            <JourneyType 
-              journeyType={journeyType} 
-              key={i}
-              selectedjourneyType={selectedjourneyType}
-              selectJourneyType={selectJourneyType}
-            />
-          ))
-        }
-      </ul>
+
+      <form>
+        <ul className="Journey-Types-List">
+          {
+            journeyTypes.map((journeyType,i) => (
+              <JourneyType 
+                journeyType={journeyType} 
+                key={i}
+                selectedjourneyType={selectedjourneyType}
+                selectJourneyType={selectJourneyType}
+              />
+            ))
+          }
+        </ul>
+      </form>
 
       {
-        selectedjourneyType !== '' ? <NavLink to="/pick-heroes" >Pick Heroes</NavLink> : null
+        selectedjourneyType !== '' ? <NavLink to="/pick-heroes">Pick Heroes</NavLink> : null
       }
     </Screen>
   );

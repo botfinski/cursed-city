@@ -12,8 +12,6 @@ function HeroCheckbox({hero, name, id, selectHeroes, selectedHeroes}) {
       selectHeroes(selectedHeroes => selectedHeroes.filter(arrayId => arrayId !== hero))
     }
   };
-
-  // console.log(selectedHeroes)
   
   return(
     <>
@@ -21,7 +19,7 @@ function HeroCheckbox({hero, name, id, selectHeroes, selectedHeroes}) {
         type="checkbox" 
         id={id}
         name='heroes'
-        checked={selectedHeroes.includes(hero) ? "checked" : null}
+        checked={selectedHeroes.includes(hero) ? "checked" : ""}
         disabled={selectedHeroes.length === 4 && !selectedHeroes.includes(hero) ? "disabled" : null}
         onChange={() => selectHero(hero)}
       />
@@ -51,17 +49,19 @@ function Hero({hero, selectHeroes, selectedHeroes}) {
   )
 }
 
-function PickHeroes({heroes, selectHeroes, selectedHeroes}) {
-  // console.log(selectedHeroes)
-
+function PickHeroes({heroes, selectHeroes, selectedHeroes, setHeroesTokens}) {
   return (
-    <Screen className="PickHeroes" >
-      <NavLink to="/pick-journey" className="Back-Button">Back</NavLink>
+    <Screen className="PickHeroes">
+      <NavLink 
+        to="/pick-journey" 
+        className="Back-Button"
+      >
+        Back
+      </NavLink>
+
       <h1>
         Pick Heroes
       </h1>
-
-      {/* <p>heroes {selectedHeroes.length}</p> */}
 
       <ul>
         {
@@ -77,7 +77,14 @@ function PickHeroes({heroes, selectHeroes, selectedHeroes}) {
       </ul>
 
       {
-        selectedHeroes.length === 4 ? <NavLink to="/pick-initiative-tokens" >Pick Initiative Tokens</NavLink> : null
+        selectedHeroes.length === 4 ? (
+          <NavLink 
+            to="/pick-initiative-tokens" 
+            onClick={() => setHeroesTokens(heroesTokens => [...selectedHeroes])}
+          >
+            Pick Initiative Tokens
+          </NavLink>
+        ) : null
       }
 
     </Screen>

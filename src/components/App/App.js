@@ -12,7 +12,7 @@ import PrepareCombat from "../../screens/PrepareCombat/PrepareCombat";
 import heroes from "../../data/heroes.json"
 import questStats from "../../data/quest.json"
 import history from "../../data/history.json"
-// import save from "../../data/save.json"
+import save from "../../data/save.json"
 
 import "./App.scss";
 
@@ -58,6 +58,7 @@ function App() {
             heroes={heroes}
             selectedHeroes={selectedHeroes}
             selectHeroes={selectHeroes}
+            setHeroesTokens={setHeroesTokens}
           />
         </Route>
 
@@ -72,6 +73,9 @@ function App() {
         <Route path="/prepare-combat">
           <PrepareCombat
             heroesTokens={heroesTokens}
+            nightfallToken={nightfallToken}
+            questToken={questToken}
+            save={save}
           />
         </Route>
         
