@@ -1,35 +1,34 @@
 [
-    {
-        "name": "Jelsen Darrock",
-        "id": "jelsen"
-    },
-    {
-        "name": "Glaurio ven Alten III",
-        "id": "glaurio"
-    },
-    {
-        "name": "Cleona Zeitengale",
-        "id": "cleona"
-    },
-    {
-        "name": "Brutogg Corpse-Eater",
-        "id": "brutogg"
-    },
-    {
-        "name": "Qulathis the Exile",
-        "id": "qulathis"
-    },
-    {
-        "name": "Emelda Braskov",
-        "id": "emelda"
-    },
-    {
-        "name": "Dagnai Holdenstock",
-        "id": "dagnai"
-    },
-    {
-        "name": "Octren Glimscry",
-        "id": "octren"
-    }
+  {
+    "name": "Jelsen Darrock",
+    "id": "jelsen"
+  },
+  {
+    "name": "Glaurio ven Alten III",
+    "id": "glaurio"
+  },
+  {
+    "name": "Cleona Zeitengale",
+    "id": "cleona"
+  },
+  {
+    "name": "Brutogg Corpse-Eater",
+    "id": "brutogg"
+  },
+  {
+    "name": "Qulathis the Exile",
+    "id": "qulathis"
+  },
+  {
+    "name": "Emelda Braskov",
+    "id": "emelda"
+  },
+  {
+    "name": "Dagnai Holdenstock",
+    "id": "dagnai"
+  },
+  {
+    "name": "Octren Glimscry",
+    "id": "octren"
+  }
 ]
-

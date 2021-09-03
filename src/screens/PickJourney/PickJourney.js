@@ -1,87 +1,81 @@
-import React from "react";
+import React from "react"
 import Screen from "../../components/Screen/Screen"
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"
 
-import "./PickJourney.scss";
+import "./PickJourney.scss"
 
 const journeyTypes = [
   {
     name: "Hunt",
-    disabled: false
+    disabled: false,
   },
   {
     name: "Scavenge",
-    disabled: true
+    disabled: true,
   },
   {
     name: "Deliverance",
-    disabled: true
+    disabled: true,
   },
   {
     name: "Decapitation",
-    disabled: true
-  }
+    disabled: true,
+  },
 ]
 
-
-function JourneyType({journeyType, selectJourneyType, selectedjourneyType}) {
-  return(
+function JourneyType({ journeyType, selectJourneyType, selectedjourneyType }) {
+  return (
     <li>
-      <input 
-        type="radio" 
-        value={journeyType.name.toLowerCase()} 
-        id={journeyType.name.toLowerCase()} 
+      <input
+        type="radio"
+        value={journeyType.name.toLowerCase()}
+        id={journeyType.name.toLowerCase()}
         name="journey-type"
         disabled={journeyType.disabled ? "disabled" : null}
-        checked={selectedjourneyType === journeyType.name.toLowerCase() ? "checked" : ""}
+        checked={
+          selectedjourneyType === journeyType.name.toLowerCase()
+            ? "checked"
+            : ""
+        }
         onChange={() => selectJourneyType(journeyType.name.toLowerCase())}
       />
-      <label 
-        htmlFor={journeyType.name.toLowerCase()} 
-      > 
-        {journeyType.name}
-      </label>
+      <label htmlFor={journeyType.name.toLowerCase()}>{journeyType.name}</label>
     </li>
   )
 }
 
-function PickJourney({selectedjourneyType, selectJourneyType}) {
+function PickJourney({ selectedjourneyType, selectJourneyType }) {
   // console.log(selectedjourneyType)
   return (
     <Screen className="PickJourney">
-      <NavLink 
-        to="/" 
+      <NavLink
+        to="/"
         className="Back-Button"
         onClick={() => selectJourneyType("")}
       >
         Main Menu
       </NavLink>
-      
-      <h1>
-        Pick Journey
-      </h1>
+
+      <h1>Pick Journey</h1>
 
       <form>
         <ul className="Journey-Types-List">
-          {
-            journeyTypes.map((journeyType,i) => (
-              <JourneyType 
-                journeyType={journeyType} 
-                key={i}
-                selectedjourneyType={selectedjourneyType}
-                selectJourneyType={selectJourneyType}
-              />
-            ))
-          }
+          {journeyTypes.map((journeyType, i) => (
+            <JourneyType
+              journeyType={journeyType}
+              key={i}
+              selectedjourneyType={selectedjourneyType}
+              selectJourneyType={selectJourneyType}
+            />
+          ))}
         </ul>
       </form>
 
-      {
-        selectedjourneyType !== '' ? <NavLink to="/pick-heroes">Pick Heroes</NavLink> : null
-      }
+      {selectedjourneyType !== "" ? (
+        <NavLink to="/pick-heroes">Pick Heroes</NavLink>
+      ) : null}
     </Screen>
-  );
+  )
 }
 
-export default PickJourney;
-
+export default PickJourney

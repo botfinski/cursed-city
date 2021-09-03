@@ -1,35 +1,33 @@
-import React, { useState} from "react";
-import { BrowserRouter, Route} from "react-router-dom";
-import MainMenu from "../../screens/MainMenu/MainMenu";
-import PickJourney from "../../screens/PickJourney/PickJourney";
-import Stats from "../../screens/Stats/Stats";
-import History from "../../screens/History/History";
-import Heroes from "../../screens/Heroes/Heroes";
-import PickHeroes from "../../screens/PickHeroes/PickHeroes";
-import PickInitiativeTokens from "../../screens/PickInitiativeTokens/PickInitiativeTokens";
-import PrepareCombat from "../../screens/PrepareCombat/PrepareCombat";
+import React, { useState } from "react"
+import { BrowserRouter, Route } from "react-router-dom"
+import MainMenu from "../../screens/MainMenu/MainMenu"
+import PickJourney from "../../screens/PickJourney/PickJourney"
+import Stats from "../../screens/Stats/Stats"
+import History from "../../screens/History/History"
+import Heroes from "../../screens/Heroes/Heroes"
+import PickHeroes from "../../screens/PickHeroes/PickHeroes"
+// import PickInitiativeTokens from "../../screens/PickInitiativeTokens/PickInitiativeTokens"
+// import PrepareCombat from "../../screens/PrepareCombat/PrepareCombat"
+import PrepareJourney from "../../screens/PrepareJourney/PrepareJourney"
 
 import heroes from "../../data/heroes.json"
 import questStats from "../../data/quest.json"
 import history from "../../data/history.json"
 import save from "../../data/save.json"
 
-import "./App.scss";
-
+import "./App.scss"
 
 function App() {
-
-  const [selectedjourneyType, selectJourneyType] = useState('');
-  const [selectedHeroes, selectHeroes] = useState([]);
-  const [heroesTokens, setHeroesTokens] = useState([]);
-  const [nightfallToken, setNightfallToken] = useState(0);
-  const [questToken, setQuestToken] = useState(0);
-
+  const [selectedjourneyType, selectJourneyType] = useState("")
+  const [selectedHeroes, selectHeroes] = useState([])
+  const [heroesTokens, setHeroesTokens] = useState([])
+  // const [nightfallToken, setNightfallToken] = useState(0)
+  // const [questToken, setQuestToken] = useState(0)
+  // console.log(save)
 
   return (
     <BrowserRouter>
       <div className="App">
-          
         <Route exact path="/">
           <MainMenu />
         </Route>
@@ -43,18 +41,18 @@ function App() {
         </Route>
 
         <Route path="/heroes">
-          <Heroes heroes={heroes}/>
+          <Heroes heroes={heroes} save={save} />
         </Route>
 
         <Route path="/pick-journey">
-          <PickJourney 
+          <PickJourney
             selectedjourneyType={selectedjourneyType}
             selectJourneyType={selectJourneyType}
           />
         </Route>
 
         <Route path="/pick-heroes">
-          <PickHeroes 
+          <PickHeroes
             heroes={heroes}
             selectedHeroes={selectedHeroes}
             selectHeroes={selectHeroes}
@@ -62,8 +60,12 @@ function App() {
           />
         </Route>
 
-        <Route path="/pick-initiative-tokens">
-          <PickInitiativeTokens 
+        <Route path="/prepare-journey">
+          <PrepareJourney />
+        </Route>
+
+        {/*<Route path="/pick-initiative-tokens">
+          <PickInitiativeTokens
             selectedHeroes={selectedHeroes}
             heroesTokens={heroesTokens}
             setHeroesTokens={setHeroesTokens}
@@ -77,12 +79,10 @@ function App() {
             questToken={questToken}
             save={save}
           />
-        </Route>
-        
+        </Route> */}
       </div>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
-
+export default App

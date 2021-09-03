@@ -1,42 +1,43 @@
-import React from "react";
-import Screen from "../../components/Screen/Screen";
-import { NavLink } from "react-router-dom";
+import React from "react"
+import Screen from "../../components/Screen/Screen"
+import { NavLink } from "react-router-dom"
 
-import "./PickHeroes.scss";
+import "./PickHeroes.scss"
 
-function HeroCheckbox({hero, name, id, selectHeroes, selectedHeroes}) {
-  const selectHero = (hero) => {
-    if(!selectedHeroes.includes(hero)) {
-      selectHeroes(selectedHeroes => [...selectedHeroes, hero]);
+function HeroCheckbox({ hero, name, id, selectHeroes, selectedHeroes }) {
+  const selectHero = hero => {
+    if (!selectedHeroes.includes(hero)) {
+      selectHeroes(selectedHeroes => [...selectedHeroes, hero])
     } else {
-      selectHeroes(selectedHeroes => selectedHeroes.filter(arrayId => arrayId !== hero))
+      selectHeroes(selectedHeroes =>
+        selectedHeroes.filter(arrayId => arrayId !== hero)
+      )
     }
-  };
-  
-  return(
+  }
+
+  return (
     <>
-      <input 
-        type="checkbox" 
+      <input
+        type="checkbox"
         id={id}
-        name='heroes'
+        name="heroes"
         checked={selectedHeroes.includes(hero) ? "checked" : ""}
-        disabled={selectedHeroes.length === 4 && !selectedHeroes.includes(hero) ? "disabled" : null}
+        disabled={
+          selectedHeroes.length === 4 && !selectedHeroes.includes(hero)
+            ? "disabled"
+            : null
+        }
         onChange={() => selectHero(hero)}
       />
-      <label 
-        htmlFor={id}
-      >
-        {name}
-      </label>
+      <label htmlFor={id}>{name}</label>
     </>
   )
 }
 
-function Hero({hero, selectHeroes, selectedHeroes}) {
-
-  return(
+function Hero({ hero, selectHeroes, selectedHeroes }) {
+  return (
     <li className="Hero">
-      <HeroCheckbox 
+      <HeroCheckbox
         hero={hero}
         name={hero.name}
         id={hero.id}
@@ -49,47 +50,36 @@ function Hero({hero, selectHeroes, selectedHeroes}) {
   )
 }
 
-function PickHeroes({heroes, selectHeroes, selectedHeroes, setHeroesTokens}) {
+function PickHeroes({ heroes, selectHeroes, selectedHeroes, setHeroesTokens }) {
   return (
     <Screen className="PickHeroes">
-      <NavLink 
-        to="/pick-journey" 
-        className="Back-Button"
-      >
+      <NavLink to="/pick-journey" className="Back-Button">
         Back
       </NavLink>
 
-      <h1>
-        Pick Heroes
-      </h1>
+      <h1>Pick Heroes</h1>
 
       <ul>
-        {
-          heroes.map((hero,i) => (
-            <Hero 
-              hero={hero} 
-              key={i}
-              selectHeroes={selectHeroes}
-              selectedHeroes={selectedHeroes}
-            />
-          ))
-        }
+        {heroes.map((hero, i) => (
+          <Hero
+            hero={hero}
+            key={i}
+            selectHeroes={selectHeroes}
+            selectedHeroes={selectedHeroes}
+          />
+        ))}
       </ul>
 
-      {
-        selectedHeroes.length === 4 ? (
-          <NavLink 
-            to="/pick-initiative-tokens" 
-            onClick={() => setHeroesTokens(heroesTokens => [...selectedHeroes])}
-          >
-            Pick Initiative Tokens
-          </NavLink>
-        ) : null
-      }
-
+      {selectedHeroes.length === 4 ? (
+        <NavLink
+          to="/prepare-journey"
+          onClick={() => setHeroesTokens(heroesTokens => [...selectedHeroes])}
+        >
+          Prepare Journey
+        </NavLink>
+      ) : null}
     </Screen>
-  );
+  )
 }
 
-export default PickHeroes;
-
+export default PickHeroes

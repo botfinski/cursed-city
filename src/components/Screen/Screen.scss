@@ -1,42 +1,42 @@
 .Screen {
-    position: relative;
-    width: calc(100% - 2em);
-    min-height: calc(100% - 2em);
-    display: flex;
-    flex-flow: column wrap;
-    padding: 1em;
-    background: linear-gradient(45deg, #3a0000, #d41d1d);
-    color: #fff;
+  position: relative;
+  width: calc(100% - 2em);
+  min-height: calc(100% - 2em);
+  display: flex;
+  flex-flow: column wrap;
+  padding: 1em;
+  background: linear-gradient(45deg, #3a0000, #d41d1d) fixed;
+  color: #fff;
 
-    h1 {
-        margin-bottom: .5em;
-        font-size: 2em;
-        text-transform: uppercase;
-        text-align: center;
-    }
+  h1 {
+    margin-bottom: 0.5em;
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: center;
+  }
 
-    h2 {
-        font-size: 1.3em;
-        margin-bottom: .2em;
-    }
+  h2 {
+    font-size: 1.3em;
+    margin-bottom: 0.2em;
+  }
 
-    // margins 
+  // margins
 
-    p {
-        margin-bottom: .2em;
-    }
+  p {
+    margin-bottom: 0.2em;
+  }
 
-    // colors
+  // colors
 
-    a {
-        color: #daff00;
-    }
+  a {
+    color: #daff00;
+  }
 
-    // components
+  // components
 
-    .Back-Button {
-        position: absolute;
-        top: 1em;
-        left: 1em;
-    }
+  .Back-Button {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+  }
 }
